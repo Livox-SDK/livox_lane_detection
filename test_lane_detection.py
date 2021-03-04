@@ -41,6 +41,7 @@ patch_replication_callback(model)
 model = model.cuda()
 checkpoint = torch.load(MODEL_NAME)
 model.load_state_dict(checkpoint['state_dict'])
+model.eval()
 
 
 test_data_subfolders = glob.glob(os.path.join(TEST_DATA_FOLDER, "*"))
